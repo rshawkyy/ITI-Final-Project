@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.itiprojectfinal.DB.AppDatabase
 import com.example.itiprojectfinal.R
 
 
@@ -21,6 +22,10 @@ class LoginFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
+
+    // Initialize the database and userDao
+//    val db = AppDatabase.getDatabase(requireContext())
+  //  userDao = db.userDao()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,5 +54,6 @@ class LoginFragment : Fragment() {
 
     private fun authenticateUser(username: String, password: String): Boolean { // should updated this fun when connected to DB
         return username == "user" && password == "pass"
+        //return userDao.authenticateUser(username, password)
     }
 }

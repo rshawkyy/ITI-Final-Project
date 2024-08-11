@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.itiprojectfinal.DB.AppDatabase
 import com.example.itiprojectfinal.R
 
 
@@ -23,6 +24,11 @@ class RegisterFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_register, container, false)
 
     }
+
+    // Initialize the database and userDao
+ //   val db = AppDatabase.getDatabase(requireContext())
+   //  userDao = db.userDao()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -60,6 +66,7 @@ class RegisterFragment : Fragment() {
 
     private fun registerUser(username: String, password: String): Boolean {
         return username == "user" && password == "pass"
+      //  userDao.insertUser(username)
     }
 
 }
